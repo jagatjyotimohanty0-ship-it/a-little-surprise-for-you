@@ -331,7 +331,17 @@ body{
 .bloom .bud-petal-3{
     animation:bloomPetal3 1.2s ease forwards;
 }
+.bloom .bud-petal-4{
+    animation:bloomPetal4 1.2s ease forwards;
+}
 
+.bloom .bud-petal-5{
+    animation:bloomPetal5 1.2s ease forwards;
+}
+
+.bloom .bud-petal-6{
+    animation:bloomPetal6 1.2s ease forwards;
+}
 .bloom .bud-center{
     animation:centerGlow 1.5s ease forwards;
 }
@@ -386,6 +396,58 @@ body{
     }
 
 }
+.bud-petal-4{
+    left:18px;
+    top:5px;
+    transform:rotate(0deg);
+}
+
+.bud-petal-5{
+    left:0;
+    top:30px;
+    transform:rotate(-60deg);
+}
+
+.bud-petal-6{
+    right:0;
+    top:30px;
+    transform:rotate(60deg);
+}
+@keyframes bloomPetal4{
+
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(0deg) translateY(-35px) scale(1.25);
+    }
+
+}
+
+@keyframes bloomPetal5{
+
+    0%{
+        transform:rotate(-60deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(-65deg) translate(-15px,5px) scale(1.25);
+    }
+
+}
+
+@keyframes bloomPetal6{
+
+    0%{
+        transform:rotate(60deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(65deg) translate(15px,5px) scale(1.25);
+    }
+
+}
 </style>
 </head>
 
@@ -428,6 +490,9 @@ body{
     <div class="bud-petal bud-petal-1"></div>
     <div class="bud-petal bud-petal-2"></div>
     <div class="bud-petal bud-petal-3"></div>
+    <div class="bud-petal bud-petal-4"></div>
+    <div class="bud-petal bud-petal-5"></div>
+    <div class="bud-petal bud-petal-6"></div>
 
     <div class="bud-center"></div>
 
