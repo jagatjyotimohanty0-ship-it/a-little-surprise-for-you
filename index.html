@@ -448,6 +448,98 @@ body{
     }
 
 }
+/* FINAL FLOWER GLOW + SWAY */
+
+#flowerBud.bloom{
+    animation:flowerSway 4s ease-in-out infinite;
+}
+
+#flowerBud.bloom .bud-petal{
+    box-shadow:
+        0 0 15px rgba(255,100,180,.6),
+        0 0 35px rgba(255,80,170,.3);
+}
+
+#flowerBud.bloom .bud-center{
+    box-shadow:
+        0 0 15px #ffd45c,
+        0 0 30px #ffd45c,
+        0 0 50px rgba(255,190,50,.5);
+}
+
+@keyframes flowerSway{
+
+    0%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateX(-50%) rotate(2deg);
+    }
+
+    100%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+}
+#finalMessage{
+    position:fixed;
+    left:50%;
+    top:8%;
+    transform:translateX(-50%) translateY(20px);
+
+    width:90%;
+    max-width:650px;
+
+    text-align:center;
+
+    opacity:0;
+
+    z-index:10;
+
+    transition:opacity 2s ease, transform 2s ease;
+
+    pointer-events:none;
+}
+
+#finalMessage.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+#finalMessage h1{
+    font-size:clamp(28px,6vw,48px);
+    line-height:1.2;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 10px #ff9ecf,
+        0 0 25px #ff4f9a;
+}
+
+#finalMessage h2{
+    font-size:clamp(18px,4vw,26px);
+    margin-bottom:25px;
+
+    color:#ffd6ec;
+}
+
+#finalMessage p{
+    font-size:18px;
+    line-height:1.7;
+    color:#fff0f7;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:20px;
+    font-weight:bold;
+
+    text-shadow:
+        0 0 10px pink,
+        0 0 20px rgba(255,100,180,.5);
+}
 </style>
 </head>
 
@@ -495,7 +587,26 @@ body{
     <div class="bud-petal bud-petal-6"></div>
 
     <div class="bud-center"></div>
+<div id="finalMessage">
 
+    <h1>Happy National Girlfriend Day, Snoor ❤️</h1>
+
+    <h2>My Sweetheart, My Love, My Everything. 💖</h2>
+
+    <p>
+        This little flower bloomed just for you... 🌸
+        <br><br>
+        Because you deserve something beautiful,
+        just like the love you brought into my life.
+        <br><br>
+        I Love You, Baby. ❤️
+    </p>
+
+    <div class="signature">
+        — Forever Yours, Jagat ❤️
+    </div>
+
+</div>
 </div>
     </div>
 
@@ -576,6 +687,12 @@ setTimeout(function(){
         .classList.add("bloom");
 
 },6000);
+setTimeout(function(){
+
+    document.getElementById("finalMessage")
+        .classList.add("show");
+
+},8500);
 };
 </script>
 
