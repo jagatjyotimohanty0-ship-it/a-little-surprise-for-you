@@ -546,6 +546,105 @@ body{
         0 0 10px pink,
         0 0 20px rgba(255,100,180,.5);
 }
+    /* 📱 MOBILE FLOWER FIX */
+
+@media (max-width:600px){
+
+    #flowerScene{
+        min-height:100vh;
+        height:auto;
+
+        padding-top:40px;
+        padding-bottom:40px;
+
+        justify-content:flex-start;
+        overflow-y:auto;
+    }
+
+    #plant{
+        width:180px;
+        height:360px;
+    }
+
+    #stem{
+        width:6px;
+    }
+
+    .stem-grow{
+        height:260px !important;
+    }
+
+    .leaf{
+        width:55px;
+        height:28px;
+    }
+
+    .leaf-left{
+        left:25px;
+        bottom:120px;
+    }
+
+    .leaf-right{
+        right:25px;
+        bottom:165px;
+    }
+
+    #flowerBud{
+        bottom:255px;
+        transform:translateX(-50%) scale(0);
+    }
+
+    .bud-show{
+        transform:translateX(-50%) scale(.75) !important;
+    }
+
+    #flowerBud.bloom{
+        animation:flowerSwayMobile 4s ease-in-out infinite;
+    }
+
+    #finalMessage{
+        width:92%;
+        margin-top:-5px;
+        padding:0 5px;
+    }
+
+    #finalMessage h1{
+        font-size:28px;
+        line-height:1.25;
+    }
+
+    #finalMessage h2{
+        font-size:18px;
+        line-height:1.4;
+    }
+
+    #finalMessage p{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    .signature{
+        font-size:18px;
+        margin-top:15px;
+    }
+
+}
+
+@keyframes flowerSwayMobile{
+
+    0%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateX(-50%) rotate(2deg);
+    }
+
+    100%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+}
 </style>
 </head>
 
