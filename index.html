@@ -20,7 +20,8 @@
 body{
     width:100%;
     min-height:100vh;
-    overflow:hidden;
+    overflow-x:hidden;
+    overflow-y:auto;
     background:
         radial-gradient(circle at center, #35152d 0%, #120914 45%, #050307 100%);
     font-family:Arial, sans-serif;
@@ -68,21 +69,27 @@ body{
 /* FLOWER SCENE */
 
 #flowerScene{
-    position:fixed;
-    inset:0;
+    position:relative;
+    width:100%;
+    min-height:100vh;
     z-index:4;
+
     display:none;
-    justify-content:center;
-    align-items:flex-end;
-    padding-bottom:12vh;
+
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+
+    padding-top:8vh;
+    padding-bottom:40px;
 }
 
 #plant{
     position:relative;
     width:220px;
-    height:500px;
+    height:450px;
+    flex-shrink:0;
 }
-
 /* Stem */
 
 #stem{
@@ -483,10 +490,9 @@ body{
 
 }
 #finalMessage{
-    position:fixed;
-    left:50%;
-    top:62%;
-    transform:translate(-50%, 30px);
+    position:relative;
+    
+   
 
     width:90%;
     max-width:650px;
