@@ -65,7 +65,106 @@ body{
     }
 
 }
+/* FLOWER SCENE */
 
+#flowerScene{
+    position:fixed;
+    inset:0;
+    z-index:4;
+    display:none;
+    justify-content:center;
+    align-items:flex-end;
+    padding-bottom:12vh;
+}
+
+#plant{
+    position:relative;
+    width:220px;
+    height:500px;
+}
+
+/* Stem */
+
+#stem{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    width:8px;
+    height:0;
+    transform:translateX(-50%);
+    border-radius:20px;
+    background:linear-gradient(to right,#315c36,#78b85c);
+    box-shadow:0 0 12px rgba(100,200,100,.3);
+
+    transition:height 4s ease;
+}
+
+/* Leaves */
+
+.leaf{
+    position:absolute;
+    width:70px;
+    height:35px;
+    background:linear-gradient(135deg,#7fcf6b,#285d36);
+    opacity:0;
+    box-shadow:0 0 12px rgba(100,220,120,.3);
+}
+
+.leaf-left{
+    left:45px;
+    bottom:180px;
+    border-radius:100% 0 100% 0;
+    transform:rotate(-25deg) scale(0);
+    transform-origin:right center;
+}
+
+.leaf-right{
+    right:45px;
+    bottom:240px;
+    border-radius:0 100% 0 100%;
+    transform:rotate(25deg) scale(0);
+    transform-origin:left center;
+}
+
+/* Grow animations */
+
+.stem-grow{
+    height:330px !important;
+}
+
+.leaf-left-grow{
+    opacity:1;
+    animation:leafLeftGrow 1.5s ease forwards;
+}
+
+.leaf-right-grow{
+    opacity:1;
+    animation:leafRightGrow 1.5s ease forwards;
+}
+
+@keyframes leafLeftGrow{
+
+    from{
+        transform:rotate(-25deg) scale(0);
+    }
+
+    to{
+        transform:rotate(-25deg) scale(1);
+    }
+
+}
+
+@keyframes leafRightGrow{
+
+    from{
+        transform:rotate(25deg) scale(0);
+    }
+
+    to{
+        transform:rotate(25deg) scale(1);
+    }
+
+}
 </style>#intro{
     position:relative;
     z-index:5;
@@ -169,7 +268,18 @@ body{
     </div>
 
 </div>
+<div id="flowerScene">
 
+    <div id="plant">
+
+        <div id="stem"></div>
+
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+
+    </div>
+
+</div>
 <script>
 
 const petals = document.getElementById("petals");
@@ -198,6 +308,44 @@ function createPetal(){
 }
 
 setInterval(createPetal,500);
+const startFlower = document.getElementById("startFlower");
+
+const intro = document.getElementById("intro");
+const flowerScene = document.getElementById("flowerScene");
+
+const stem = document.getElementById("stem");
+
+const leftLeaf = document.querySelector(".leaf-left");
+const rightLeaf = document.querySelector(".leaf-right");
+
+
+startFlower.onclick = function(){
+
+    intro.style.display = "none";
+
+    flowerScene.style.display = "flex";
+
+    setTimeout(function(){
+
+        stem.classList.add("stem-grow");
+
+    },500);
+
+
+    setTimeout(function(){
+
+        leftLeaf.classList.add("leaf-left-grow");
+
+    },2500);
+
+
+    setTimeout(function(){
+
+        rightLeaf.classList.add("leaf-right-grow");
+
+    },3200);
+
+};
 </script>
 
 </body>
