@@ -318,6 +318,74 @@ body{
     box-shadow:
         0 0 15px #ffd45c;
 }
+/* FULL FLOWER BLOOM */
+
+.bloom .bud-petal-1{
+    animation:bloomPetal1 1.2s ease forwards;
+}
+
+.bloom .bud-petal-2{
+    animation:bloomPetal2 1.2s ease forwards;
+}
+
+.bloom .bud-petal-3{
+    animation:bloomPetal3 1.2s ease forwards;
+}
+
+.bloom .bud-center{
+    animation:centerGlow 1.5s ease forwards;
+}
+
+@keyframes bloomPetal1{
+
+    0%{
+        transform:rotate(-15deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(-45deg) translate(-25px,-10px) scale(1.25);
+    }
+
+}
+
+@keyframes bloomPetal2{
+
+    0%{
+        transform:rotate(-35deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(-80deg) translate(-20px,-5px) scale(1.25);
+    }
+
+}
+
+@keyframes bloomPetal3{
+
+    0%{
+        transform:rotate(35deg) scale(1);
+    }
+
+    100%{
+        transform:rotate(80deg) translate(20px,-5px) scale(1.25);
+    }
+
+}
+
+@keyframes centerGlow{
+
+    0%{
+        transform:scale(1);
+    }
+
+    100%{
+        transform:scale(1.5);
+        box-shadow:
+            0 0 15px #ffd45c,
+            0 0 35px #ffb52e;
+    }
+
+}
 </style>
 </head>
 
@@ -437,6 +505,12 @@ setTimeout(function(){
         .classList.add("bud-show");
 
 },4300);
+setTimeout(function(){
+
+    document.getElementById("flowerBud")
+        .classList.add("bloom");
+
+},6000);
 };
 </script>
 
