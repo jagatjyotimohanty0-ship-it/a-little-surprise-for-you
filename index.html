@@ -239,6 +239,85 @@ body{
     }
 
 }
+/* FLOWER BUD */
+
+#flowerBud{
+    position:absolute;
+    left:50%;
+    bottom:325px;
+
+    width:80px;
+    height:90px;
+
+    transform:translateX(-50%) scale(0);
+    opacity:0;
+
+    transform-origin:bottom center;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1s ease;
+
+    z-index:5;
+}
+
+.bud-show{
+    opacity:1 !important;
+    transform:translateX(-50%) scale(1) !important;
+}
+
+.bud-petal{
+    position:absolute;
+
+    width:45px;
+    height:65px;
+
+    background:linear-gradient(
+        135deg,
+        #ff6fae,
+        #d92f75
+    );
+
+    border-radius:50% 50% 45% 45%;
+
+    box-shadow:
+        0 0 15px rgba(255,100,180,.5);
+}
+
+.bud-petal-1{
+    left:18px;
+    top:10px;
+    transform:rotate(-15deg);
+}
+
+.bud-petal-2{
+    left:5px;
+    top:20px;
+    transform:rotate(-35deg);
+}
+
+.bud-petal-3{
+    right:5px;
+    top:20px;
+    transform:rotate(35deg);
+}
+
+.bud-center{
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    left:27px;
+    top:35px;
+
+    border-radius:50%;
+
+    background:#ffd45c;
+
+    box-shadow:
+        0 0 15px #ffd45c;
+}
 </style>
 </head>
 
@@ -276,7 +355,15 @@ body{
 
         <div class="leaf leaf-left"></div>
         <div class="leaf leaf-right"></div>
+<div id="flowerBud">
 
+    <div class="bud-petal bud-petal-1"></div>
+    <div class="bud-petal bud-petal-2"></div>
+    <div class="bud-petal bud-petal-3"></div>
+
+    <div class="bud-center"></div>
+
+</div>
     </div>
 
 </div>
@@ -344,7 +431,12 @@ startFlower.onclick = function(){
         rightLeaf.classList.add("leaf-right-grow");
 
     },3200);
+setTimeout(function(){
 
+    document.getElementById("flowerBud")
+        .classList.add("bud-show");
+
+},4300);
 };
 </script>
 
