@@ -1,13 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy National Girlfriend Day ❤️</title>
+<title>For My Baby ❤️</title>
 
 <style>
 
@@ -15,818 +13,1760 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
 }
 
 body{
-    width:100%;
-    min-height:100vh;
-    overflow-x:hidden;
-    overflow-y:auto;
-    background:
-        radial-gradient(circle at center, #35152d 0%, #120914 45%, #050307 100%);
-    font-family:Arial, sans-serif;
+    overflow:hidden;
     color:white;
+
+    background:
+    radial-gradient(circle at 20% 20%,#6d1b65 0%,transparent 35%),
+    radial-gradient(circle at 80% 80%,#34206f 0%,transparent 40%),
+    linear-gradient(135deg,#100018,#210026,#10001f);
 }
 
-/* Falling Petals */
+/* =========================
+   FLOATING HEARTS
+========================= */
 
-#petals{
+.bg-heart{
     position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    opacity:.35;
+    animation:floatHeart linear forwards;
+    z-index:0;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progressBox{
+
+    position:fixed;
+
     top:0;
     left:0;
+
     width:100%;
-    height:100%;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:1;
+
+    height:4px;
+
+    background:rgba(255,255,255,.1);
+
+    z-index:200;
 }
 
-.petal{
-    position:absolute;
-    top:-40px;
-    font-size:22px;
+.progress{
+
+    height:100%;
+
+    width:0%;
+
+    background:linear-gradient(
+        90deg,
+        #ff5fa2,
+        #d66cff,
+        #ff9fd1
+    );
+
+    transition:width .8s ease;
+}
+
+/* =========================
+   MUSIC STATUS
+========================= */
+
+.musicStatus{
+
+    position:fixed;
+
+    top:17px;
+
+    right:17px;
+
+    z-index:100;
+
+    padding:9px 15px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    font-size:13px;
+
     opacity:.8;
+}
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    text-align:center;
+
+    z-index:2;
+}
+
+.screen.active{
+
+    display:flex;
+
+    animation:screenIn .8s ease;
+}
+
+@keyframes screenIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+    width:min(720px,94vw);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:40px 28px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.12),
+        rgba(255,255,255,.04)
+    );
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.1);
+
+    scrollbar-width:none;
+}
+
+.card::-webkit-scrollbar{
+    display:none;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.mini{
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    opacity:.75;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+}
+
+h1{
+
+    font-size:clamp(2.3rem,8vw,4.7rem);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffc4df,
+        #e5c5ff
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+h2{
+
+    font-size:clamp(1.7rem,6vw,3rem);
+
+    margin-bottom:20px;
+}
+
+p{
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    color:#f9eaf7;
+}
+
+.highlight{
+    color:#ffb8d9;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    margin-top:28px;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff579f,
+        #c967ff
+    );
+
+    box-shadow:
+    0 10px 30px rgba(255,75,170,.3);
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.04);
+
+    box-shadow:
+    0 15px 40px rgba(255,75,170,.45);
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin:15px 0 28px;
+}
+
+.photoFrame{
+
+    position:relative;
+
+    padding:7px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.4),
+        rgba(255,120,200,.3)
+    );
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+}
+
+.photo{
+
+    width:210px;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:19px;
+
+    transition:.5s;
+}
+
+.photo:hover{
+
+    transform:
+    scale(1.04)
+    rotate(1deg);
+}
+
+/* =========================
+   REASONS
+========================= */
+
+.reasons{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:25px;
+}
+
+.reason{
+
+    padding:22px 14px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
+}
+
+.reason:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.12);
+}
+
+.reasonIcon{
+
+    font-size:35px;
+
+    margin-bottom:10px;
+}
+
+.reason h3{
+
+    font-size:16px;
+
+    margin-bottom:8px;
+}
+
+.reason p{
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    opacity:.8;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories{
+
+    display:grid;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.memory{
+
+    padding:18px;
+
+    text-align:left;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border-left:3px solid #ff75b7;
+}
+
+.memoryTitle{
+
+    font-weight:bold;
+
+    margin-bottom:5px;
+}
+
+.memoryText{
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    opacity:.8;
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.question{
+
+    font-size:24px;
+
+    margin:25px 0;
+}
+
+.answers{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letterBox{
+
+    min-height:230px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+#typing{
+
+    text-align:left;
+
+    font-size:16px;
+
+    line-height:2;
+
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.bigHeart{
+
+    font-size:80px;
+
+    animation:heartBeat 1.3s infinite;
+
+    margin-bottom:15px;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+.signature{
+
+    margin-top:25px;
+
+    font-size:14px;
+
+    opacity:.65;
+
+    font-style:italic;
+}
+
+/* =========================
+   PETALS
+========================= */
+
+.petal{
+
+    position:fixed;
+
+    top:-30px;
+
+    z-index:150;
+
+    pointer-events:none;
+
     animation:fall linear forwards;
 }
 
 @keyframes fall{
 
-    0%{
-        transform:translateY(-50px) rotate(0deg);
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(500deg);
+
         opacity:0;
     }
-
-    10%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
-
-}
-/* FLOWER SCENE */
-
-#flowerScene{
-    position:relative;
-    width:100%;
-    min-height:100vh;
-    z-index:4;
-
-    display:none;
-
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-
-    padding-top:8vh;
-    padding-bottom:40px;
 }
 
-#plant{
-    position:relative;
-    width:220px;
-    height:450px;
-    flex-shrink:0;
-}
-/* Stem */
+/* =========================
+   SPARKLES
+========================= */
 
-#stem{
-    position:absolute;
-    bottom:0;
-    left:50%;
-    width:8px;
-    height:0;
-    transform:translateX(-50%);
-    border-radius:20px;
-    background:linear-gradient(to right,#315c36,#78b85c);
-    box-shadow:0 0 12px rgba(100,200,100,.3);
+.spark{
 
-    transition:height 4s ease;
-}
-
-/* Leaves */
-
-.leaf{
-    position:absolute;
-    width:70px;
-    height:35px;
-    background:linear-gradient(135deg,#7fcf6b,#285d36);
-    opacity:0;
-    box-shadow:0 0 12px rgba(100,220,120,.3);
-}
-
-.leaf-left{
-    left:45px;
-    bottom:180px;
-    border-radius:100% 0 100% 0;
-    transform:rotate(-25deg) scale(0);
-    transform-origin:right center;
-}
-
-.leaf-right{
-    right:45px;
-    bottom:240px;
-    border-radius:0 100% 0 100%;
-    transform:rotate(25deg) scale(0);
-    transform-origin:left center;
-}
-
-/* Grow animations */
-
-.stem-grow{
-    height:330px !important;
-}
-
-.leaf-left-grow{
-    opacity:1;
-    animation:leafLeftGrow 1.5s ease forwards;
-}
-
-.leaf-right-grow{
-    opacity:1;
-    animation:leafRightGrow 1.5s ease forwards;
-}
-
-@keyframes leafLeftGrow{
-
-    from{
-        transform:rotate(-25deg) scale(0);
-    }
-
-    to{
-        transform:rotate(-25deg) scale(1);
-    }
-
-}
-
-@keyframes leafRightGrow{
-
-    from{
-        transform:rotate(25deg) scale(0);
-    }
-
-    to{
-        transform:rotate(25deg) scale(1);
-    }
-
-}
-#intro{
-    position:relative;
-    z-index:5;
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:25px;
-}
-
-.intro-content{
-    max-width:650px;
-    animation:introAppear 2s ease forwards;
-}
-
-.small-text{
-    font-size:18px;
-    letter-spacing:3px;
-    margin-bottom:20px;
-    opacity:.8;
-}
-
-.intro-content h1{
-    font-size:clamp(38px,8vw,75px);
-    line-height:1.1;
-    margin-bottom:25px;
-    text-shadow:
-        0 0 10px rgba(255,150,210,.5),
-        0 0 30px rgba(255,100,180,.3);
-}
-
-.sub-text{
-    font-size:19px;
-    line-height:1.6;
-    margin-bottom:35px;
-    opacity:.85;
-}
-
-#startFlower{
-    padding:16px 35px;
-    border:none;
-    border-radius:50px;
-    font-size:18px;
-    color:white;
-    background:linear-gradient(135deg,#ff4f9a,#d82f78);
-    box-shadow:
-        0 0 15px rgba(255,80,160,.5),
-        0 0 35px rgba(255,80,160,.2);
-    cursor:pointer;
-    transition:.3s;
-}
-
-#startFlower:hover{
-    transform:scale(1.08);
-    box-shadow:
-        0 0 20px rgba(255,100,180,.8),
-        0 0 50px rgba(255,100,180,.4);
-}
-
-@keyframes introAppear{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-/* FLOWER BUD */
-
-#flowerBud{
-    position:absolute;
-    left:50%;
-    bottom:325px;
-
-    width:80px;
-    height:90px;
-
-    transform:translateX(-50%) scale(0);
-    opacity:0;
-
-    transform-origin:bottom center;
-
-    transition:
-        transform 1.5s ease,
-        opacity 1s ease;
-
-    z-index:5;
-}
-
-.bud-show{
-    opacity:1 !important;
-    transform:translateX(-50%) scale(1) !important;
-}
-
-.bud-petal{
-    position:absolute;
-
-    width:45px;
-    height:65px;
-
-    background:linear-gradient(
-        135deg,
-        #ff6fae,
-        #d92f75
-    );
-
-    border-radius:50% 50% 45% 45%;
-
-    box-shadow:
-        0 0 15px rgba(255,100,180,.5);
-}
-
-.bud-petal-1{
-    left:18px;
-    top:10px;
-    transform:rotate(-15deg);
-}
-
-.bud-petal-2{
-    left:5px;
-    top:20px;
-    transform:rotate(-35deg);
-}
-
-.bud-petal-3{
-    right:5px;
-    top:20px;
-    transform:rotate(35deg);
-}
-
-.bud-center{
-    position:absolute;
-
-    width:25px;
-    height:25px;
-
-    left:27px;
-    top:35px;
-
-    border-radius:50%;
-
-    background:#ffd45c;
-
-    box-shadow:
-        0 0 15px #ffd45c;
-}
-/* FULL FLOWER BLOOM */
-
-.bloom .bud-petal-1{
-    animation:bloomPetal1 1.2s ease forwards;
-}
-
-.bloom .bud-petal-2{
-    animation:bloomPetal2 1.2s ease forwards;
-}
-
-.bloom .bud-petal-3{
-    animation:bloomPetal3 1.2s ease forwards;
-}
-.bloom .bud-petal-4{
-    animation:bloomPetal4 1.2s ease forwards;
-}
-
-.bloom .bud-petal-5{
-    animation:bloomPetal5 1.2s ease forwards;
-}
-
-.bloom .bud-petal-6{
-    animation:bloomPetal6 1.2s ease forwards;
-}
-.bloom .bud-center{
-    animation:centerGlow 1.5s ease forwards;
-}
-
-@keyframes bloomPetal1{
-
-    0%{
-        transform:rotate(-15deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(-45deg) translate(-25px,-10px) scale(1.25);
-    }
-
-}
-
-@keyframes bloomPetal2{
-
-    0%{
-        transform:rotate(-35deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(-80deg) translate(-20px,-5px) scale(1.25);
-    }
-
-}
-
-@keyframes bloomPetal3{
-
-    0%{
-        transform:rotate(35deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(80deg) translate(20px,-5px) scale(1.25);
-    }
-
-}
-
-@keyframes centerGlow{
-
-    0%{
-        transform:scale(1);
-    }
-
-    100%{
-        transform:scale(1.5);
-        box-shadow:
-            0 0 15px #ffd45c,
-            0 0 35px #ffb52e;
-    }
-
-}
-.bud-petal-4{
-    left:18px;
-    top:5px;
-    transform:rotate(0deg);
-}
-
-.bud-petal-5{
-    left:0;
-    top:30px;
-    transform:rotate(-60deg);
-}
-
-.bud-petal-6{
-    right:0;
-    top:30px;
-    transform:rotate(60deg);
-}
-@keyframes bloomPetal4{
-
-    0%{
-        transform:rotate(0deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(0deg) translateY(-35px) scale(1.25);
-    }
-
-}
-
-@keyframes bloomPetal5{
-
-    0%{
-        transform:rotate(-60deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(-65deg) translate(-15px,5px) scale(1.25);
-    }
-
-}
-
-@keyframes bloomPetal6{
-
-    0%{
-        transform:rotate(60deg) scale(1);
-    }
-
-    100%{
-        transform:rotate(65deg) translate(15px,5px) scale(1.25);
-    }
-
-}
-/* FINAL FLOWER GLOW + SWAY */
-
-#flowerBud.bloom{
-    animation:flowerSway 4s ease-in-out infinite;
-}
-
-#flowerBud.bloom .bud-petal{
-    box-shadow:
-        0 0 15px rgba(255,100,180,.6),
-        0 0 35px rgba(255,80,170,.3);
-}
-
-#flowerBud.bloom .bud-center{
-    box-shadow:
-        0 0 15px #ffd45c,
-        0 0 30px #ffd45c,
-        0 0 50px rgba(255,190,50,.5);
-}
-
-@keyframes flowerSway{
-
-    0%{
-        transform:translateX(-50%) rotate(-2deg);
-    }
-
-    50%{
-        transform:translateX(-50%) rotate(2deg);
-    }
-
-    100%{
-        transform:translateX(-50%) rotate(-2deg);
-    }
-
-}
-#finalMessage{
-    position:relative;
-    width:92%;
-    max-width:900px;
-    margin-top:25px;
-
-    padding:30px;
-
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,0.15);
-    border-radius:25px;
-
-    text-align:left;
-
-    opacity:0;
-    transform:translateY(30px);
-
-    z-index:20;
-
-    transition:opacity 2s ease, transform 2s ease;
+    position:fixed;
 
     pointer-events:none;
 
-    box-shadow:0 0 30px rgba(255,120,180,.25);
+    z-index:180;
+
+    animation:sparkle 1.5s ease forwards;
 }
 
-#finalMessage.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-#finalMessage h1{
-    font-size:clamp(25px,6vw,45px);
-    line-height:1.2;
-    margin-bottom:15px;
-
-    text-shadow:
-        0 0 10px #ff9ecf,
-        0 0 25px #ff4f9a;
-}
-
-#finalMessage h2{
-    font-size:clamp(17px,4vw,25px);
-    margin-bottom:20px;
-    color:#ffd6ec;
-}
-
-#finalMessage p{
-    font-size:18px;
-    line-height:1.7;
-    color:#fff0f7;
-}
-
-.signature{
-    margin-top:20px;
-    font-size:20px;
-    font-weight:bold;
-
-    color:white;
-
-    text-shadow:
-        0 0 10px pink,
-        0 0 20px rgba(255,100,180,.5);
-}
-    /* 📱 MOBILE FLOWER FIX */
-
-@media (max-width:600px){
-
-    #flowerScene{
-        min-height:100vh;
-        height:auto;
-
-        padding-top:40px;
-        padding-bottom:40px;
-
-        justify-content:flex-start;
-        overflow-y:auto;
-    }
-
-    #plant{
-        width:180px;
-        height:360px;
-    }
-
-    #stem{
-        width:6px;
-    }
-
-    .stem-grow{
-        height:260px !important;
-    }
-
-    .leaf{
-        width:55px;
-        height:28px;
-    }
-
-    .leaf-left{
-        left:25px;
-        bottom:120px;
-    }
-
-    .leaf-right{
-        right:25px;
-        bottom:165px;
-    }
-
-    #flowerBud{
-        bottom:255px;
-        transform:translateX(-50%) scale(0);
-    }
-
-    .bud-show{
-        transform:translateX(-50%) scale(.75) !important;
-    }
-
-    #flowerBud.bloom{
-        animation:flowerSwayMobile 4s ease-in-out infinite;
-    }
-
-    #finalMessage{
-        width:92%;
-        margin-top:-5px;
-        padding:0 5px;
-    }
-
-    #finalMessage h1{
-        font-size:28px;
-        line-height:1.25;
-    }
-
-    #finalMessage h2{
-        font-size:18px;
-        line-height:1.4;
-    }
-
-    #finalMessage p{
-        font-size:16px;
-        line-height:1.6;
-    }
-
-    .signature{
-        font-size:18px;
-        margin-top:15px;
-    }
-
-}
-
-@keyframes flowerSwayMobile{
+@keyframes sparkle{
 
     0%{
-        transform:translateX(-50%) rotate(-2deg);
-    }
-
-    50%{
-        transform:translateX(-50%) rotate(2deg);
+        opacity:1;
+        transform:scale(.5);
     }
 
     100%{
-        transform:translateX(-50%) rotate(-2deg);
+        opacity:0;
+
+        transform:
+        translate(
+            var(--x),
+            var(--y)
+        )
+        scale(1.5);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .card{
+        padding:32px 18px;
+    }
+
+    .reasons{
+        grid-template-columns:1fr;
+    }
+
+    .photo{
+        width:150px;
+        height:200px;
+    }
+
+    p{
+        font-size:.96rem;
     }
 
 }
+
 </style>
 </head>
 
 <body>
-<div id="petals"></div>
-<div id="intro">
 
-    <div class="intro-content">
 
-        <p class="small-text">
-            For Someone Very Special ❤️
-        </p>
+<!-- PROGRESS -->
+
+<div class="progressBox">
+    <div class="progress" id="progress"></div>
+</div>
+
+
+<!-- MUSIC STATUS -->
+
+<div class="musicStatus" id="musicStatus">
+    🎵 Waiting for you...
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =========================
+     SCREEN 1
+     START + MUSIC
+========================= -->
+
+<section class="screen active" id="s1">
+
+    <div class="card">
+
+        <div style="font-size:65px;margin-bottom:10px;">
+            💗
+        </div>
+
+        <div class="mini">
+            A tiny surprise for you
+        </div>
 
         <h1>
-            I Made Something Special<br>
-            For You
+            Hey Baby... 👀❤️
         </h1>
 
-        <p class="sub-text">
-            Baby, this little surprise is just for you... 🌸
+        <p>
+
+            Pata hai mujhe nahi pata
+            tum ye website dekh ke kya sochogi...
+            😂
+
+            <br><br>
+
+            But honestly,
+            aaj bas randomly mann kiya
+            ki tumhare liye kuch banau.
+
+            <br><br>
+
+            <span class="highlight">
+                No special occasion. No reason.
+            </span>
+
+            <br>
+
+            Bas because you're you. 🥹❤️
+
         </p>
 
-        <button id="startFlower">
-            🌱 Click Me
+
+        <button class="btn"
+                onclick="startSurprise()">
+
+            Open Your Surprise 💗
+
+        </button>
+
+
+        <p style="
+            font-size:12px;
+            opacity:.55;
+            margin-top:18px;
+        ">
+
+            🎵 Music will start with the surprise
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section class="screen" id="s2">
+
+    <div class="card">
+
+        <div class="mini">
+            Just a little something
+        </div>
+
+        <h2>
+            Baby, ek minute... 🫣
+        </h2>
+
+        <p>
+
+            Kabhi kabhi na,
+            hum kisi person ko ye batana
+            bhool jaate hain ki woh humare
+            liye kitna important hai.
+
+            <br><br>
+
+            Isliye socha...
+
+            <br><br>
+
+            <span class="highlight">
+                Aaj tumhe remind kar deta hoon. ❤️
+            </span>
+
+            <br><br>
+
+            Tum mere liye sirf ek person nahi ho
+            jisse main baat karta hoon.
+
+            <br>
+
+            Somehow,
+            tum meri everyday life ka
+            ek bahut beautiful part ban gayi ho.
+
+        </p>
+
+        <button class="btn"
+                onclick="nextScreen(3)">
+
+            Haan Baby, continue karo 🥹
+
         </button>
 
     </div>
 
-</div>
-<div id="flowerScene">
+</section>
 
-    <div id="plant">
 
-        <div id="stem"></div>
+<!-- =========================
+     SCREEN 3
+     ONLY HER PHOTOS
+========================= -->
 
-        <div class="leaf leaf-left"></div>
-        <div class="leaf leaf-right"></div>
-<div id="flowerBud">
+<section class="screen" id="s3">
 
-    <div class="bud-petal bud-petal-1"></div>
-    <div class="bud-petal bud-petal-2"></div>
-    <div class="bud-petal bud-petal-3"></div>
-    <div class="bud-petal bud-petal-4"></div>
-    <div class="bud-petal bud-petal-5"></div>
-    <div class="bud-petal bud-petal-6"></div>
+    <div class="card">
 
-    <div class="bud-center"></div>
-<div id="finalMessage">
+        <div class="photos">
 
-    <div id="finalMessage">
+            <div class="photoFrame">
 
-    <h1>For My Beautiful Snoor ❤️</h1>
+                <img
+                    src="images/photo1.jpg"
+                    class="photo"
+                    alt="Baby"
+                >
 
-    <h2>You Mean The World To Me 🌸</h2>
+            </div>
 
-    <p>
-        Baby,
-        <br><br>
 
-        I just wanted to remind you how special you are to me.
-        Sometimes I don't express it enough, but I truly appreciate everything about you.
-        <br><br>
+            <div class="photoFrame">
 
-        Your smile makes my day better, your care makes me feel loved, and your presence makes my life more beautiful.
-        Thank you for always being you.
-        <br><br>
+                <img
+                    src="images/photo2.jpg"
+                    class="photo"
+                    alt="Baby"
+                >
 
-        If I ever made you feel bad, I'm really sorry. It was never my intention.
-        Seeing you happy is one of the most important things to me.
-        <br><br>
+            </div>
 
-        I hope this little flower reminds you how beautiful, kind, and precious you are.
-        And I hope it brings a smile to your face. 🌸
-        <br><br>
+        </div>
 
-        I love you so much, Baby. ❤️
-    </p>
 
-    <div class="signature">
-        — Forever Yours,<br>
-        Jagat ❤️
+        <p>
+
+            Okay Baby... 🫣
+
+            <br><br>
+
+            Main kuch bolunga toh tum
+            shayad bol dogi
+            <span class="highlight">
+                "bas karo 😭"
+            </span>
+
+            <br><br>
+
+            But honestly...
+
+            <br>
+
+            tumhari photos dekh ke
+            smile aa hi jaati hai. ❤️
+
+            <br><br>
+
+            Aur haan,
+            itni cute hone ki
+            permission kisne di tumhe? 😭💕
+
+        </p>
+
+
+        <button class="btn"
+                onclick="nextScreen(4)">
+
+            Okay Baby, ab next 😭❤️
+
+        </button>
+
     </div>
 
-</div>
-</div>
+</section>
+
+
+<!-- =========================
+     SCREEN 4
+========================= -->
+
+<section class="screen" id="s4">
+
+    <div class="card">
+
+        <div class="mini">
+            Three little things
+        </div>
+
+        <h2>
+            3 Things I Love About You 💗
+        </h2>
+
+        <div class="reasons">
+
+
+            <div class="reason">
+
+                <div class="reasonIcon">
+                    🥹
+                </div>
+
+                <h3>
+                    Your Smile
+                </h3>
+
+                <p>
+
+                    Pata nahi kyun,
+                    but tum smile karti ho na
+                    toh automatically
+                    mera mood better ho jaata hai.
+
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reasonIcon">
+                    💬
+                </div>
+
+                <h3>
+                    The Way You Talk
+                </h3>
+
+                <p>
+
+                    Tumse baat karte karte
+                    pata hi nahi chalta
+                    ki kitna time nikal gaya.
+
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reasonIcon">
+                    🫶
+                </div>
+
+                <h3>
+                    The Comfort
+                </h3>
+
+                <p>
+
+                    Tumhare saath baat karna
+                    somehow easy,
+                    natural aur comfortable lagta hai.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button class="btn"
+                onclick="nextScreen(5)">
+
+            One more thing... 👀
+
+        </button>
+
     </div>
 
-</div>
+</section>
+
+
+<!-- =========================
+     SCREEN 5
+========================= -->
+
+<section class="screen" id="s5">
+
+    <div class="card">
+
+        <div class="mini">
+            Important question 🚨
+        </div>
+
+        <h2>
+            Baby, sach sach batana... 👀
+        </h2>
+
+        <div class="question">
+
+            Kya tumhe pata hai
+            tum mere liye kitni special ho?
+
+        </div>
+
+
+        <div class="answers">
+
+            <button class="btn"
+                    onclick="answer('yes')">
+
+                Obviously 😌❤️
+
+            </button>
+
+
+            <button class="btn"
+                    onclick="answer('no')">
+
+                Maybe nahi 🥺
+
+            </button>
+
+        </div>
+
+
+        <p id="answerText"
+           style="margin-top:25px;">
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 6
+========================= -->
+
+<section class="screen" id="s6">
+
+    <div class="card">
+
+        <div class="mini">
+            Little things
+        </div>
+
+        <h2>
+            Our Random Moments 🌙
+        </h2>
+
+
+        <div class="memories">
+
+
+            <div class="memory">
+
+                <div class="memoryTitle">
+                    💬 Random Conversations
+                </div>
+
+                <div class="memoryText">
+
+                    Kabhi serious baat,
+                    kabhi bilkul random nonsense...
+                    but somehow I enjoy all of it.
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memoryTitle">
+                    🌙 Late Night Talks
+                </div>
+
+                <div class="memoryText">
+
+                    Woh conversations jinka
+                    koi proper ending nahi hota,
+                    bas baat karte karte
+                    time nikal jaata hai.
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memoryTitle">
+                    😂 Random Smiles
+                </div>
+
+                <div class="memoryText">
+
+                    Kabhi chat open karta hoon
+                    aur tumhari koi random baat
+                    padh ke bas smile aa jaati hai.
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memoryTitle">
+                    🫶 The Comfort
+                </div>
+
+                <div class="memoryText">
+
+                    Shayad explain karna difficult hai,
+                    but tumse baat karna
+                    genuinely comforting feel hota hai.
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <button class="btn"
+                onclick="nextScreen(7)">
+
+            Baby, ab ek letter hai... 💌
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 7
+========================= -->
+
+<section class="screen" id="s7">
+
+    <div class="card">
+
+        <div class="mini">
+            From my heart
+        </div>
+
+        <h2>
+            Baby, this one's for you 💌
+        </h2>
+
+
+        <div class="letterBox">
+
+            <p id="typing"></p>
+
+        </div>
+
+
+        <button
+            class="btn"
+            id="letterButton"
+            onclick="nextScreen(8)"
+            style="
+                opacity:0;
+                pointer-events:none;
+            ">
+
+            One Last Thing... ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 8
+========================= -->
+
+<section class="screen" id="s8">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <h2>
+            Before you leave...
+        </h2>
+
+
+        <p>
+
+            Ek last cheez yaad rakhna, Baby.
+
+            <br><br>
+
+            Tumhe hamesha perfect hone ki
+            zarurat nahi hai.
+
+            <br>
+
+            Tumhe kuch prove karne ki
+            bhi zarurat nahi hai.
+
+            <br><br>
+
+            <span class="highlight">
+                Tum jaisi ho,
+                mere liye waise hi special ho.
+            </span>
+
+        </p>
+
+
+        <button class="btn"
+                onclick="finalSurprise()">
+
+            Press Me, Baby 🫣❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 9
+========================= -->
+
+<section class="screen" id="s9">
+
+    <div class="card">
+
+        <div class="bigHeart">
+            💗
+        </div>
+
+        <div class="mini">
+            And finally...
+        </div>
+
+        <h1>
+            I Love You, Baby.
+        </h1>
+
+
+        <p>
+
+            Shayad ek website
+            ye sab properly explain nahi kar sakti...
+
+            <br><br>
+
+            but I hope tumhe samajh aaye
+            ki maine ye sirf tumhe
+
+            <span class="highlight">
+                smile karwane ke liye
+            </span>
+
+            banayi hai.
+
+            <br><br>
+
+            Aur agar tum abhi smile kar rahi ho...
+
+            <br><br>
+
+            then mission successful. 😭❤️
+
+        </p>
+
+
+        <div class="signature">
+
+            Made with a lot of love,
+            just for you. 🫶
+
+            <br><br>
+
+            — Jagat ❤️
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <script>
 
-const petals = document.getElementById("petals");
+/* =========================
+   VARIABLES
+========================= */
 
-function createPetal(){
+let currentScreen = 1;
 
-    const petal = document.createElement("div");
+const music =
+    document.getElementById("music");
 
-    petal.className = "petal";
+const musicStatus =
+    document.getElementById("musicStatus");
 
-    petal.innerHTML = "🌸";
 
-    petal.style.left = Math.random() * 100 + "vw";
+/* =========================
+   START SURPRISE
+   MUSIC + WEBSITE
+========================= */
 
-    petal.style.fontSize =
-        (15 + Math.random() * 15) + "px";
+function startSurprise(){
 
-    petal.style.animationDuration =
-        (5 + Math.random() * 5) + "s";
+    /*
+       User clicked the button,
+       so browser allows music to play.
+    */
 
-    petals.appendChild(petal);
+    music.play()
+    .then(() => {
 
-    setTimeout(function(){
-        petal.remove();
-    },10000);
+        musicStatus.innerHTML =
+            "🎵 Playing for you ❤️";
+
+    })
+    .catch(() => {
+
+        musicStatus.innerHTML =
+            "🎵 Surprise started";
+
+    });
+
+
+    nextScreen(2);
+
 }
 
-setInterval(createPetal,500);
-const startFlower = document.getElementById("startFlower");
 
-const intro = document.getElementById("intro");
-const flowerScene = document.getElementById("flowerScene");
+/* =========================
+   SCREEN SYSTEM
+========================= */
 
-const stem = document.getElementById("stem");
+function nextScreen(number){
 
-const leftLeaf = document.querySelector(".leaf-left");
-const rightLeaf = document.querySelector(".leaf-right");
-
-
-startFlower.onclick = function(){
-
-    intro.style.display = "none";
-
-    flowerScene.style.display = "flex";
-
-    setTimeout(function(){
-
-        stem.classList.add("stem-grow");
-
-    },500);
+    document
+        .getElementById("s" + currentScreen)
+        .classList.remove("active");
 
 
-    setTimeout(function(){
-
-        leftLeaf.classList.add("leaf-left-grow");
-
-    },2500);
+    document
+        .getElementById("s" + number)
+        .classList.add("active");
 
 
-    setTimeout(function(){
+    currentScreen = number;
 
-        rightLeaf.classList.add("leaf-right-grow");
 
-    },3200);
-setTimeout(function(){
+    updateProgress();
 
-    document.getElementById("flowerBud")
-        .classList.add("bud-show");
 
-},4300);
-setTimeout(function(){
+    if(number === 7){
 
-    document.getElementById("flowerBud")
-        .classList.add("bloom");
+        setTimeout(
+            startTyping,
+            500
+        );
 
-},6000);
-setTimeout(function(){
+    }
 
-    document.getElementById("finalMessage")
-        .classList.add("show");
+}
 
-},8500);
-};
+
+/* =========================
+   PROGRESS
+========================= */
+
+function updateProgress(){
+
+    let percent =
+        ((currentScreen - 1) / 8) * 100;
+
+
+    document
+        .getElementById("progress")
+        .style.width =
+        percent + "%";
+
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+function answer(type){
+
+    let text =
+        document.getElementById("answerText");
+
+
+    if(type === "yes"){
+
+        text.innerHTML =
+        "Hmmm... confident ho 😌❤️ " +
+        "But I still think tum underestimate karti ho " +
+        "ki tum actually kitni special ho, Baby.";
+
+    }
+
+    else{
+
+        text.innerHTML =
+        "Then sun lo Baby... 🥺❤️ " +
+        "You're MUCH more special than you think.";
+
+    }
+
+
+    setTimeout(
+        () => nextScreen(6),
+        2800
+    );
+
+}
+
+
+/* =========================
+   TYPING LETTER
+========================= */
+
+const letter =
+
+"Baby, honestly mujhe nahi pata " +
+"main words mein kitna achhe se explain kar paunga, " +
+
+"but I just want you to know one thing... " +
+
+"tum meri life ka ek bahut beautiful part ban chuki ho. " +
+
+"Kabhi kabhi hum bas normal si baat kar rahe hote hain, " +
+
+"aur mujhe realize hota hai ki somehow " +
+
+"tumse baat karna mere day ka favourite part ban gaya hai. " +
+
+"Your little talks, your random messages, " +
+
+"tumhari silly baatein... sab kuch. ❤️ " +
+
+"Main ye website kisi special day ke liye nahi bana raha. " +
+
+"Bas randomly mann kiya ki Baby ko thoda special feel karaya jaaye. " +
+
+"Toh agar kabhi tumhe lage ki tum important nahi ho, " +
+
+"please ye page yaad rakhna. " +
+
+"Because somewhere, someone genuinely feels lucky " +
+
+"to have you in his life. 🥹❤️";
+
+
+function startTyping(){
+
+    const box =
+        document.getElementById("typing");
+
+
+    const button =
+        document.getElementById("letterButton");
+
+
+    box.innerHTML = "";
+
+
+    button.style.opacity = "0";
+
+    button.style.pointerEvents =
+        "none";
+
+
+    let i = 0;
+
+
+    function type(){
+
+        if(i < letter.length){
+
+            box.innerHTML +=
+                letter.charAt(i);
+
+            i++;
+
+
+            setTimeout(
+                type,
+                28
+            );
+
+        }
+
+        else{
+
+            button.style.opacity = "1";
+
+            button.style.pointerEvents =
+                "auto";
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+function finalSurprise(){
+
+    nextScreen(9);
+
+
+    document
+        .getElementById("progress")
+        .style.width =
+        "100%";
+
+
+    createPetals();
+
+    createSparkles();
+
+
+    setTimeout(
+        createPetals,
+        1000
+    );
+
+
+    setTimeout(
+        createSparkles,
+        1500
+    );
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createBackgroundHeart(){
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className =
+        "bg-heart";
+
+
+    const emojis = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💓",
+        "🫶"
+    ];
+
+
+    heart.innerHTML =
+        emojis[
+            Math.floor(
+                Math.random() *
+                emojis.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (12 + Math.random() * 25) +
+        "px";
+
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 7) +
+        "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(
+        () => heart.remove(),
+        14000
+    );
+
+}
+
+
+setInterval(
+    createBackgroundHeart,
+    900
+);
+
+
+/* =========================
+   PETALS
+========================= */
+
+function createPetals(){
+
+    for(
+        let i = 0;
+        i < 45;
+        i++
+    ){
+
+        setTimeout(
+            () => {
+
+                const petal =
+                    document.createElement("div");
+
+
+                petal.className =
+                    "petal";
+
+
+                petal.innerHTML =
+                    "🌸";
+
+
+                petal.style.left =
+                    Math.random() * 100 +
+                    "vw";
+
+
+                petal.style.fontSize =
+                    (14 + Math.random() * 18) +
+                    "px";
+
+
+                petal.style.animationDuration =
+                    (4 + Math.random() * 5) +
+                    "s";
+
+
+                document.body.appendChild(
+                    petal
+                );
+
+
+                setTimeout(
+                    () => petal.remove(),
+                    10000
+                );
+
+
+            },
+            i * 90
+        );
+
+    }
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function createSparkles(){
+
+    const symbols = [
+        "✨",
+        "💗",
+        "❤️",
+        "💕"
+    ];
+
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ){
+
+        setTimeout(
+            () => {
+
+                const spark =
+                    document.createElement("div");
+
+
+                spark.className =
+                    "spark";
+
+
+                spark.innerHTML =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+
+                spark.style.left =
+                    "50vw";
+
+
+                spark.style.top =
+                    "50vh";
+
+
+                spark.style.setProperty(
+                    "--x",
+                    (Math.random()*600-300)
+                    + "px"
+                );
+
+
+                spark.style.setProperty(
+                    "--y",
+                    (Math.random()*600-300)
+                    + "px"
+                );
+
+
+                document.body.appendChild(
+                    spark
+                );
+
+
+                setTimeout(
+                    () => spark.remove(),
+                    1800
+                );
+
+
+            },
+            i * 40
+        );
+
+    }
+
+}
+
+
+/* INITIAL */
+
+updateProgress();
+
 </script>
 
 </body>
-
 </html>
+```
