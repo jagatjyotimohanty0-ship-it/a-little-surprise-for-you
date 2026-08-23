@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,16 +23,13 @@ html,body{
 body{
     overflow:hidden;
     color:white;
-
     background:
     radial-gradient(circle at 20% 20%,#6d1b65 0%,transparent 35%),
     radial-gradient(circle at 80% 80%,#34206f 0%,transparent 40%),
     linear-gradient(135deg,#100018,#210026,#10001f);
 }
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* FLOATING HEARTS */
 
 .bg-heart{
     position:fixed;
@@ -61,98 +57,61 @@ body{
     }
 }
 
-/* =========================
-   PROGRESS BAR
-========================= */
+/* PROGRESS */
 
 .progressBox{
-
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     height:4px;
-
     background:rgba(255,255,255,.1);
-
     z-index:200;
 }
 
 .progress{
-
     height:100%;
-
     width:0%;
-
     background:linear-gradient(
         90deg,
         #ff5fa2,
         #d66cff,
         #ff9fd1
     );
-
     transition:width .8s ease;
 }
 
-/* =========================
-   MUSIC STATUS
-========================= */
+/* MUSIC */
 
 .musicStatus{
-
     position:fixed;
-
     top:17px;
-
     right:17px;
-
     z-index:100;
-
     padding:9px 15px;
-
     border-radius:30px;
-
     background:rgba(255,255,255,.08);
-
     border:1px solid rgba(255,255,255,.15);
-
     backdrop-filter:blur(10px);
-
     font-size:13px;
-
     opacity:.8;
 }
 
-/* =========================
-   SCREENS
-========================= */
+/* SCREEN */
 
 .screen{
-
     position:absolute;
-
     inset:0;
-
     display:none;
-
     justify-content:center;
-
     align-items:center;
-
     padding:25px;
-
     text-align:center;
-
     z-index:2;
 }
 
 .screen.active{
-
     display:flex;
-
     animation:screenIn .8s ease;
 }
 
@@ -169,20 +128,13 @@ body{
     }
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
 .card{
-
     width:min(720px,94vw);
-
     max-height:90vh;
-
     overflow:auto;
-
     padding:40px 28px;
-
     border-radius:30px;
 
     background:
@@ -207,29 +159,19 @@ body{
     display:none;
 }
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 
 .mini{
-
     font-size:14px;
-
     letter-spacing:2px;
-
     opacity:.75;
-
     margin-bottom:15px;
-
     text-transform:uppercase;
 }
 
 h1{
-
     font-size:clamp(2.3rem,8vw,4.7rem);
-
     line-height:1.1;
-
     margin-bottom:20px;
 
     background:linear-gradient(
@@ -240,23 +182,17 @@ h1{
     );
 
     -webkit-background-clip:text;
-
     -webkit-text-fill-color:transparent;
 }
 
 h2{
-
     font-size:clamp(1.7rem,6vw,3rem);
-
     margin-bottom:20px;
 }
 
 p{
-
     font-size:1.05rem;
-
     line-height:1.9;
-
     color:#f9eaf7;
 }
 
@@ -264,20 +200,13 @@ p{
     color:#ffb8d9;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 .btn{
-
     margin-top:28px;
-
     padding:14px 28px;
-
     border:none;
-
     border-radius:40px;
-
     color:white;
 
     background:
@@ -291,14 +220,11 @@ p{
     0 10px 30px rgba(255,75,170,.3);
 
     cursor:pointer;
-
     font-size:15px;
-
     transition:.3s;
 }
 
 .btn:hover{
-
     transform:
     translateY(-3px)
     scale(1.04);
@@ -311,31 +237,20 @@ p{
     transform:scale(.97);
 }
 
-/* =========================
-   PHOTOS
-========================= */
+/* PHOTOS */
 
 .photos{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-wrap:wrap;
-
     gap:18px;
-
     margin:15px 0 28px;
 }
 
 .photoFrame{
-
     position:relative;
-
     padding:7px;
-
     border-radius:25px;
 
     background:
@@ -350,188 +265,120 @@ p{
 }
 
 .photo{
-
     width:210px;
-
     height:260px;
-
     object-fit:cover;
-
     display:block;
-
     border-radius:19px;
-
     transition:.5s;
 }
 
 .photo:hover{
-
     transform:
     scale(1.04)
     rotate(1deg);
 }
 
-/* =========================
-   REASONS
-========================= */
+/* REASONS */
 
 .reasons{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:14px;
-
     margin-top:25px;
 }
 
 .reason{
-
     padding:22px 14px;
-
     border-radius:20px;
-
     background:rgba(255,255,255,.07);
-
     border:1px solid rgba(255,255,255,.1);
-
     transition:.3s;
 }
 
 .reason:hover{
-
     transform:translateY(-6px);
-
     background:rgba(255,255,255,.12);
 }
 
 .reasonIcon{
-
     font-size:35px;
-
     margin-bottom:10px;
 }
 
 .reason h3{
-
     font-size:16px;
-
     margin-bottom:8px;
 }
 
 .reason p{
-
     font-size:13px;
-
     line-height:1.5;
-
     opacity:.8;
 }
 
-/* =========================
-   MEMORIES
-========================= */
+/* MEMORIES */
 
 .memories{
-
     display:grid;
-
     gap:12px;
-
     margin-top:25px;
 }
 
 .memory{
-
     padding:18px;
-
     text-align:left;
-
     border-radius:18px;
-
     background:rgba(255,255,255,.06);
-
     border-left:3px solid #ff75b7;
 }
 
 .memoryTitle{
-
     font-weight:bold;
-
     margin-bottom:5px;
 }
 
 .memoryText{
-
     font-size:14px;
-
     line-height:1.6;
-
     opacity:.8;
 }
 
-/* =========================
-   QUESTION
-========================= */
+/* QUESTION */
 
 .question{
-
     font-size:24px;
-
     margin:25px 0;
 }
 
 .answers{
-
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:15px;
 }
 
-/* =========================
-   LETTER
-========================= */
+/* LETTER */
 
 .letterBox{
-
     min-height:230px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     padding:20px;
-
 }
 
 #typing{
-
     text-align:left;
-
     font-size:16px;
-
     line-height:2;
-
 }
 
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 .bigHeart{
-
     font-size:80px;
-
     animation:heartBeat 1.3s infinite;
-
     margin-bottom:15px;
 }
 
@@ -547,57 +394,38 @@ p{
 }
 
 .signature{
-
     margin-top:25px;
-
     font-size:14px;
-
     opacity:.65;
-
     font-style:italic;
 }
 
-/* =========================
-   PETALS
-========================= */
+/* PETALS */
 
 .petal{
-
     position:fixed;
-
     top:-30px;
-
     z-index:150;
-
     pointer-events:none;
-
     animation:fall linear forwards;
 }
 
 @keyframes fall{
 
     to{
-
         transform:
         translateY(110vh)
         rotate(500deg);
-
         opacity:0;
     }
 }
 
-/* =========================
-   SPARKLES
-========================= */
+/* SPARKLES */
 
 .spark{
-
     position:fixed;
-
     pointer-events:none;
-
     z-index:180;
-
     animation:sparkle 1.5s ease forwards;
 }
 
@@ -610,7 +438,6 @@ p{
 
     100%{
         opacity:0;
-
         transform:
         translate(
             var(--x),
@@ -620,9 +447,7 @@ p{
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -672,10 +497,7 @@ p{
 </audio>
 
 
-<!-- =========================
-     SCREEN 1
-     START + MUSIC
-========================= -->
+<!-- SCREEN 1 -->
 
 <section class="screen active" id="s1">
 
@@ -717,14 +539,12 @@ p{
 
         </p>
 
-
         <button class="btn"
                 onclick="startSurprise()">
 
             Open Your Surprise 💗
 
         </button>
-
 
         <p style="
             font-size:12px;
@@ -741,9 +561,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 2
-========================= -->
+<!-- SCREEN 2 -->
 
 <section class="screen" id="s2">
 
@@ -799,10 +617,10 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 3
-     ONLY HER PHOTOS
-========================= -->
+<!-- SCREEN 3
+     DIRECT PHOTOS
+     NO FOLDER
+-->
 
 <section class="screen" id="s3">
 
@@ -813,18 +631,17 @@ p{
             <div class="photoFrame">
 
                 <img
-                    src="images/photo1.jpg"
+                    src="photo1.jpg"
                     class="photo"
                     alt="Baby"
                 >
 
             </div>
 
-
             <div class="photoFrame">
 
                 <img
-                    src="images/photo2.jpg"
+                    src="photo2.jpg"
                     class="photo"
                     alt="Baby"
                 >
@@ -832,7 +649,6 @@ p{
             </div>
 
         </div>
-
 
         <p>
 
@@ -863,7 +679,6 @@ p{
 
         </p>
 
-
         <button class="btn"
                 onclick="nextScreen(4)">
 
@@ -876,9 +691,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 4
-========================= -->
+<!-- SCREEN 4 -->
 
 <section class="screen" id="s4">
 
@@ -894,7 +707,6 @@ p{
 
         <div class="reasons">
 
-
             <div class="reason">
 
                 <div class="reasonIcon">
@@ -906,12 +718,10 @@ p{
                 </h3>
 
                 <p>
-
                     Pata nahi kyun,
                     but tum smile karti ho na
                     toh automatically
                     mera mood better ho jaata hai.
-
                 </p>
 
             </div>
@@ -928,11 +738,9 @@ p{
                 </h3>
 
                 <p>
-
                     Tumse baat karte karte
                     pata hi nahi chalta
                     ki kitna time nikal gaya.
-
                 </p>
 
             </div>
@@ -949,18 +757,14 @@ p{
                 </h3>
 
                 <p>
-
                     Tumhare saath baat karna
                     somehow easy,
                     natural aur comfortable lagta hai.
-
                 </p>
 
             </div>
 
-
         </div>
-
 
         <button class="btn"
                 onclick="nextScreen(5)">
@@ -974,9 +778,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 5
-========================= -->
+<!-- SCREEN 5 -->
 
 <section class="screen" id="s5">
 
@@ -997,7 +799,6 @@ p{
 
         </div>
 
-
         <div class="answers">
 
             <button class="btn"
@@ -1006,7 +807,6 @@ p{
                 Obviously 😌❤️
 
             </button>
-
 
             <button class="btn"
                     onclick="answer('no')">
@@ -1017,7 +817,6 @@ p{
 
         </div>
 
-
         <p id="answerText"
            style="margin-top:25px;">
         </p>
@@ -1027,9 +826,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 6
-========================= -->
+<!-- SCREEN 6 -->
 
 <section class="screen" id="s6">
 
@@ -1043,9 +840,7 @@ p{
             Our Random Moments 🌙
         </h2>
 
-
         <div class="memories">
-
 
             <div class="memory">
 
@@ -1054,11 +849,9 @@ p{
                 </div>
 
                 <div class="memoryText">
-
                     Kabhi serious baat,
                     kabhi bilkul random nonsense...
                     but somehow I enjoy all of it.
-
                 </div>
 
             </div>
@@ -1071,12 +864,10 @@ p{
                 </div>
 
                 <div class="memoryText">
-
                     Woh conversations jinka
                     koi proper ending nahi hota,
                     bas baat karte karte
                     time nikal jaata hai.
-
                 </div>
 
             </div>
@@ -1089,11 +880,9 @@ p{
                 </div>
 
                 <div class="memoryText">
-
                     Kabhi chat open karta hoon
                     aur tumhari koi random baat
                     padh ke bas smile aa jaati hai.
-
                 </div>
 
             </div>
@@ -1106,18 +895,14 @@ p{
                 </div>
 
                 <div class="memoryText">
-
                     Shayad explain karna difficult hai,
                     but tumse baat karna
                     genuinely comforting feel hota hai.
-
                 </div>
 
             </div>
 
-
         </div>
-
 
         <button class="btn"
                 onclick="nextScreen(7)">
@@ -1131,9 +916,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 7
-========================= -->
+<!-- SCREEN 7 -->
 
 <section class="screen" id="s7">
 
@@ -1147,13 +930,11 @@ p{
             Baby, this one's for you 💌
         </h2>
 
-
         <div class="letterBox">
 
             <p id="typing"></p>
 
         </div>
-
 
         <button
             class="btn"
@@ -1173,9 +954,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 8
-========================= -->
+<!-- SCREEN 8 -->
 
 <section class="screen" id="s8">
 
@@ -1188,7 +967,6 @@ p{
         <h2>
             Before you leave...
         </h2>
-
 
         <p>
 
@@ -1213,7 +991,6 @@ p{
 
         </p>
 
-
         <button class="btn"
                 onclick="finalSurprise()">
 
@@ -1226,9 +1003,7 @@ p{
 </section>
 
 
-<!-- =========================
-     SCREEN 9
-========================= -->
+<!-- FINAL SCREEN -->
 
 <section class="screen" id="s9">
 
@@ -1245,7 +1020,6 @@ p{
         <h1>
             I Love You, Baby.
         </h1>
-
 
         <p>
 
@@ -1273,7 +1047,6 @@ p{
 
         </p>
 
-
         <div class="signature">
 
             Made with a lot of love,
@@ -1292,9 +1065,7 @@ p{
 
 <script>
 
-/* =========================
-   VARIABLES
-========================= */
+/* SCREEN */
 
 let currentScreen = 1;
 
@@ -1305,17 +1076,9 @@ const musicStatus =
     document.getElementById("musicStatus");
 
 
-/* =========================
-   START SURPRISE
-   MUSIC + WEBSITE
-========================= */
+/* START */
 
 function startSurprise(){
-
-    /*
-       User clicked the button,
-       so browser allows music to play.
-    */
 
     music.play()
     .then(() => {
@@ -1327,19 +1090,16 @@ function startSurprise(){
     .catch(() => {
 
         musicStatus.innerHTML =
-            "🎵 Surprise started";
+            "🎵 Surprise started ❤️";
 
     });
-
 
     nextScreen(2);
 
 }
 
 
-/* =========================
-   SCREEN SYSTEM
-========================= */
+/* NEXT SCREEN */
 
 function nextScreen(number){
 
@@ -1347,17 +1107,13 @@ function nextScreen(number){
         .getElementById("s" + currentScreen)
         .classList.remove("active");
 
-
     document
         .getElementById("s" + number)
         .classList.add("active");
 
-
     currentScreen = number;
 
-
     updateProgress();
-
 
     if(number === 7){
 
@@ -1371,15 +1127,12 @@ function nextScreen(number){
 }
 
 
-/* =========================
-   PROGRESS
-========================= */
+/* PROGRESS */
 
 function updateProgress(){
 
     let percent =
         ((currentScreen - 1) / 8) * 100;
-
 
     document
         .getElementById("progress")
@@ -1389,15 +1142,12 @@ function updateProgress(){
 }
 
 
-/* =========================
-   QUESTION
-========================= */
+/* QUESTION */
 
 function answer(type){
 
     let text =
         document.getElementById("answerText");
-
 
     if(type === "yes"){
 
@@ -1416,7 +1166,6 @@ function answer(type){
 
     }
 
-
     setTimeout(
         () => nextScreen(6),
         2800
@@ -1425,9 +1174,7 @@ function answer(type){
 }
 
 
-/* =========================
-   TYPING LETTER
-========================= */
+/* LETTER */
 
 const letter =
 
@@ -1466,22 +1213,17 @@ function startTyping(){
     const box =
         document.getElementById("typing");
 
-
     const button =
         document.getElementById("letterButton");
 
-
     box.innerHTML = "";
-
 
     button.style.opacity = "0";
 
     button.style.pointerEvents =
         "none";
 
-
     let i = 0;
-
 
     function type(){
 
@@ -1491,7 +1233,6 @@ function startTyping(){
                 letter.charAt(i);
 
             i++;
-
 
             setTimeout(
                 type,
@@ -1511,37 +1252,30 @@ function startTyping(){
 
     }
 
-
     type();
 
 }
 
 
-/* =========================
-   FINAL SURPRISE
-========================= */
+/* FINAL */
 
 function finalSurprise(){
 
     nextScreen(9);
-
 
     document
         .getElementById("progress")
         .style.width =
         "100%";
 
-
     createPetals();
 
     createSparkles();
-
 
     setTimeout(
         createPetals,
         1000
     );
-
 
     setTimeout(
         createSparkles,
@@ -1551,19 +1285,15 @@ function finalSurprise(){
 }
 
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* FLOATING HEARTS */
 
 function createBackgroundHeart(){
 
     const heart =
         document.createElement("div");
 
-
     heart.className =
         "bg-heart";
-
 
     const emojis = [
         "❤️",
@@ -1574,7 +1304,6 @@ function createBackgroundHeart(){
         "🫶"
     ];
 
-
     heart.innerHTML =
         emojis[
             Math.floor(
@@ -1583,25 +1312,20 @@ function createBackgroundHeart(){
             )
         ];
 
-
     heart.style.left =
         Math.random() * 100 + "vw";
-
 
     heart.style.fontSize =
         (12 + Math.random() * 25) +
         "px";
 
-
     heart.style.animationDuration =
         (6 + Math.random() * 7) +
         "s";
 
-
     document.body.appendChild(
         heart
     );
-
 
     setTimeout(
         () => heart.remove(),
@@ -1610,16 +1334,13 @@ function createBackgroundHeart(){
 
 }
 
-
 setInterval(
     createBackgroundHeart,
     900
 );
 
 
-/* =========================
-   PETALS
-========================= */
+/* PETALS */
 
 function createPetals(){
 
@@ -1635,40 +1356,32 @@ function createPetals(){
                 const petal =
                     document.createElement("div");
 
-
                 petal.className =
                     "petal";
 
-
                 petal.innerHTML =
                     "🌸";
-
 
                 petal.style.left =
                     Math.random() * 100 +
                     "vw";
 
-
                 petal.style.fontSize =
                     (14 + Math.random() * 18) +
                     "px";
-
 
                 petal.style.animationDuration =
                     (4 + Math.random() * 5) +
                     "s";
 
-
                 document.body.appendChild(
                     petal
                 );
-
 
                 setTimeout(
                     () => petal.remove(),
                     10000
                 );
-
 
             },
             i * 90
@@ -1679,9 +1392,7 @@ function createPetals(){
 }
 
 
-/* =========================
-   SPARKLES
-========================= */
+/* SPARKLES */
 
 function createSparkles(){
 
@@ -1691,7 +1402,6 @@ function createSparkles(){
         "❤️",
         "💕"
     ];
-
 
     for(
         let i = 0;
@@ -1705,10 +1415,8 @@ function createSparkles(){
                 const spark =
                     document.createElement("div");
 
-
                 spark.className =
                     "spark";
-
 
                 spark.innerHTML =
                     symbols[
@@ -1718,14 +1426,11 @@ function createSparkles(){
                         )
                     ];
 
-
                 spark.style.left =
                     "50vw";
 
-
                 spark.style.top =
                     "50vh";
-
 
                 spark.style.setProperty(
                     "--x",
@@ -1733,24 +1438,20 @@ function createSparkles(){
                     + "px"
                 );
 
-
                 spark.style.setProperty(
                     "--y",
                     (Math.random()*600-300)
                     + "px"
                 );
 
-
                 document.body.appendChild(
                     spark
                 );
-
 
                 setTimeout(
                     () => spark.remove(),
                     1800
                 );
-
 
             },
             i * 40
@@ -1769,4 +1470,3 @@ updateProgress();
 
 </body>
 </html>
-```
